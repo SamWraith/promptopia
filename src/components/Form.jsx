@@ -30,17 +30,17 @@ const Form = ({ type, post, setPost, submitting, handleSubmit }) => {
                 </label>
                 <label>
                     <span className="font-satoshi font-semibold text-base text-gray-700">
-                        Tag{` `}
+                        tags{` `}
                         <span className="font-normal">
                             (#product, #webdevelopment, #idea)
                         </span>
                     </span>
                     <input
-                        value={post.tag}
+                        value={post.tags}
                         onChange={(e) =>
-                            setPost({ ...post, tag: e.target.value })
+                            setPost({ ...post, tags: e.target.value })
                         }
-                        placeholder="#tag"
+                        placeholder="#tags"
                         required
                         className="form_input"
                     />
