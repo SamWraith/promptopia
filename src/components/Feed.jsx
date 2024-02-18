@@ -46,7 +46,25 @@ const Feed = () => {
                     className="search_input peer"
                 />
             </form>
-            <PromptCardList data={posts} handleTagClick={() => {}} />
+            <PromptCardList
+                data={posts}
+                handleTagClick={() => {
+                    // posts.map((post, index) => {
+                    //     console.log(`${index}:`, post);
+                    //     if (post.creater && post.creater.image) {
+                    //         console.log(
+                    //             `Image at ${index}:`,
+                    //             post.creater.image
+                    //         );
+                    //     } else {
+                    //         console.log(`Image not available at ${index}`);
+                    //     }
+                    // });
+                    posts.map((post) => {
+                        console.log(post.creater.image);
+                    });
+                }}
+            />
         </section>
     );
 };
