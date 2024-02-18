@@ -27,8 +27,14 @@ const Feed = () => {
         setPosts(data);
     };
 
-    useEffect(async () => {
-        await fetchPosts();
+    useEffect(() => {
+        fetchPosts()
+            .then(() => {
+                console.log("Posts fetched!");
+            })
+            .catch((error) => {
+                console.log(error.message);
+            });
     }, []);
 
     const filterPrompts = (searchtext) => {

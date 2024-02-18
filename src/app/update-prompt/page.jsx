@@ -12,7 +12,7 @@ const EditPrompt = () => {
     const [submitting, setSubmitting] = useState(false);
     const [post, setPost] = useState({
         prompt: "",
-        tag: "",
+        tags: "",
     });
     useEffect(() => {
         const getPromptDetails = async () => {
@@ -21,7 +21,7 @@ const EditPrompt = () => {
 
             setPost({
                 prompt: data.prompt,
-                tag: data.tag,
+                tags: data.tag,
             });
         };
         if (promptId) getPromptDetails();
@@ -38,7 +38,7 @@ const EditPrompt = () => {
                 method: "PATCH",
                 body: JSON.stringify({
                     prompt: post.prompt,
-                    tag: post.tag,
+                    tag: post.tags,
                 }),
             });
             if (response.ok) {
