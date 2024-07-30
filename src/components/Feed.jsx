@@ -22,9 +22,14 @@ const Feed = () => {
     const [posts, setPosts] = useState([]);
 
     const fetchPosts = async () => {
-        const response = await fetch("/api/prompt", { cache: "no-store" });
-        const data = await response.json();
-        setPosts(data);
+        try {
+            const response = await fetch("/api/prompt", { cache: "no-store" });
+            const data = await response.json();
+            setPosts(data);
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     useEffect(() => {
