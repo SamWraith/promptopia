@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import PromptCard from "./PromptCard";
+import axios from "axios";
 
 const PromptCardList = ({ data, handleTagClick }) => (
     <div className="mt-16 prompt_layout">
@@ -22,9 +23,11 @@ const Feed = () => {
     const [posts, setPosts] = useState([]);
 
     const fetchPosts = async () => {
-        const response = await fetch("/api/prompt", { cache: "no-cache" });
-        const data = await response.json();
-        setPosts(data);
+        // const response = await fetch("/api/prompt", { cache: "no-cache" });
+        const response = await axios.get("/api/prompt");
+        console.log(response);
+        // const data = await response.json();
+        setPosts(response.data);
     };
 
     useEffect(() => {
