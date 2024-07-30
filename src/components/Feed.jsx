@@ -22,7 +22,7 @@ const Feed = () => {
     const [posts, setPosts] = useState([]);
 
     const fetchPosts = async () => {
-        const response = await fetch("/api/prompt", { cache: "no-cache" });
+        const response = await fetch("/api/prompt", { cache: "no-store" });
         const data = await response.json();
         setPosts(data);
     };
@@ -35,7 +35,7 @@ const Feed = () => {
             .catch((error) => {
                 console.log(error.message);
             });
-    }, []);
+    }, [posts]);
 
     const filterPrompts = (searchtext) => {
         const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
