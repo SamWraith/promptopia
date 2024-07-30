@@ -1,5 +1,5 @@
 "use client";
-
+"force-dynamic";
 import { useEffect, useState } from "react";
 import PromptCard from "./PromptCard";
 
