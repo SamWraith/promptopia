@@ -23,10 +23,8 @@ const Feed = () => {
     const [posts, setPosts] = useState([]);
 
     const fetchPosts = async () => {
-        // const response = await fetch("/api/prompt", { cache: "no-cache" });
-        const response = await axios.get("/api/prompt");
-        console.log(response);
-        // const data = await response.json();
+        const response = await fetch("/api/prompt", { cache: "no-cache" });
+        const data = await response.json();
         setPosts(response.data);
     };
 
