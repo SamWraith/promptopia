@@ -23,7 +23,9 @@ const Feed = () => {
 
     const fetchPosts = async () => {
         try {
-            const response = await fetch("/api/prompt", { cache: "no-store" });
+             const dynamic = "force-dynamic";
+            "force-dynamic";
+            const response = await fetch("/api/prompt", { next: {revalidate: 0} });
             const data = await response.json();
             setPosts(data);
             console.log(data);
