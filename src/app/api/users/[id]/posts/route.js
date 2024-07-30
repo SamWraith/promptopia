@@ -7,7 +7,6 @@ export const GET = async (req, { params }) => {
         const prompts = await Prompt.find({
             creater: params.id,
         }).populate("creater");
-        console.log(params.id);
         return new Response(JSON.stringify(prompts), { status: 200 });
     } catch (error) {
         return new Response("Failed to get all prompts", { status: 500 });
