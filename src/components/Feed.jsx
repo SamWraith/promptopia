@@ -25,7 +25,7 @@ const Feed = () => {
         try {
              const dynamic = "force-dynamic";
             "force-dynamic";
-            const response = await fetch("/api/prompt", { next: {revalidate: 0} });
+            const response = await fetch("/api/prompt", { next: {revalidate: 0} }, {dynamic: "force-dynamic"});
             const data = await response.json();
             setPosts(data);
             console.log(data);
