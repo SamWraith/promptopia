@@ -35,7 +35,7 @@ const Feed = () => {
             .catch((error) => {
                 console.log(error.message);
             });
-    }, [posts]);
+    }, []);
 
     const filterPrompts = (searchtext) => {
         const regex = new RegExp(searchtext, "i"); // 'i' flag for case-insensitive search
